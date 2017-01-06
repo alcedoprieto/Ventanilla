@@ -1,0 +1,13 @@
+{
+  "name": "siga",
+  "description": "Sistema de Gestion de Reportes de Averias",
+  "main": "",
+  "authors": [
+    "Alcedo Prieto Molina"
+  ],
+  "license": "MIT",
+  "homepage": "siga.app",
+  "dependencies": {
+    "bootstrap-material-design": "0.5.10"
+  }
+}
