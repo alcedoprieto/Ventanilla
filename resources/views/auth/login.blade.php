@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Registro</div>
+                <div class="panel-heading">Ingresar</div>
                 <div class="panel-body">
                     {!!Form::open(['url' => 'login', 'role'=>'form', 'class'=>'form-horizontal'])!!}
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"">
@@ -34,10 +34,10 @@
                         
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                {!!Form::submit('Registro',['class'=>'btn btn-primary'])!!}
+                                {!!Form::submit('Registro',['class'=>'btn btn-raised btn-primary'])!!}
 
                                 <a class="btn btn-link" href="{!! url('/password/reset') !!}">
-                                    Forgot Your Password?
+                                    ¿Olvidaste tu Contraseña?
                                 </a>
                             </div>
                         </div>

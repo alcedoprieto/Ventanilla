@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Tiposolicitud extends Migration
+class CreateTiposolicitudsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class Tiposolicitud extends Migration
      */
     public function up()
     {
-        Schema::create('tiposolicitudes', function(Blueprint $table){
+        Schema::create('tiposolicitudes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tiposolicitud',100);
+            $table->integer('clas_id')->unsigned();
+            $table->foreign('clas_id')->references('id')->on('clasificacionsolicitudes');
             $table->timestamps();
         });
     }
