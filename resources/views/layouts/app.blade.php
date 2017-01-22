@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,28 +26,42 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+            <div class="container-fluid">
+                
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
+                    
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Inicio
                     </a>
                 </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+                <div class="navbar-collapse collapse navbar-responsive-collapse">
+                    @if (Auth::guest())
+                    @else
+                      <ul class="nav navbar-nav">
+                        <li><a href="javascript:void(0)">Link</a></li>
+                        <li class="dropdown">
+                          <a href="javascript:void(0)" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Menu
+                            <b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="javascript:void(0)">Action</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Solicitudes</li>
+                            <li><a href="{{ url('/clasificacionsolicitud') }}">Clasificación</a></li>
+                            <li><a href="javascript:void(0)">Tipos</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    @endif
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -78,6 +92,7 @@
                         @endif
                     </ul>
                 </div>
+                
             </div>
         </nav>
         <div class="container">
