@@ -13,13 +13,17 @@
 						<table class="table table-bordered table-striped">
 							<thead>
 								<tr>
-									<th>Id</th><th>Descripción</th>
+									<th>Id</th><th>Descripción</th><th></th>
 								</tr>
 							</thead>
 							<tbody>
 								@foreach($ClasSol as $Clas)
 									<tr>
-										<td>{{ $Clas->id }}</td><td>{{ $Clas->desclasificacion }}</td>
+										<td width="60">{{ $Clas->id }}</td>
+										<td>{{ $Clas->desclasificacion }}</td>
+										<td  width="30">
+										<a href="clasificacionsolicitud/{{$Clas->id}}" class="glyphicon glyphicon-wrench" aria-hidden="true"></a>														</td>
+					
 									</tr>
 								@endforeach
 							</tbody>

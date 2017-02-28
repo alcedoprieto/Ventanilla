@@ -5,6 +5,7 @@ use Validator;
 use Illuminate\Http\Request;
 use App\Http\Requests\ClasificacionSolicitudRequest;
 
+
 use App\Clasificacionsolicitud;
 
 class ClasificacionsolicitudController extends Controller
@@ -31,4 +32,36 @@ class ClasificacionsolicitudController extends Controller
     	return redirect('clasificacionsolicitud');
     }
 
+        public function show($id)
+    {
+        $ClasSol = Clasificacionsolicitud::find($id);
+
+        return view('clasificacionsolicitud.show',['ClasSol'=>$ClasSol]);
+        
+    }
+
+    public function edit($id)
+    {
+        $ClasSol = Clasificacionsolicitud::find($id);
+
+        return view('clasificacionsolicitud.edit',['ClasSol'=>$ClasSol]);
+        
+    }
+
+    public function update($id, ClasificacionSolicitudRequest $request)
+    {
+        $ClasSol = Clasificacionsolicitud::find($id);
+        //$input = Request::all();
+        //$ClasSol->update($input);
+        $ClasSol->fill($request->all());
+        $ClasSol->save();
+        return redirect('clasificacionsolicitud');
+    }
+
+    public function destroy($id)
+    {
+        Clasificacionsolicitud::destroy($id);
+        return redirect('clasificacionsolicitud');
+    }
+    
 }
