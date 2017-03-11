@@ -22,3 +22,7 @@ Route::get('/home', 'HomeController@index');
 // Clasificacionsolicitud
 
 Route::resource('/clasificacionsolicitud','ClasificacionsolicitudController');
+
+// Tipos de Solicitud
+
+Route::resource('/tiposolicitud','TiposolicitudController');
